@@ -97,7 +97,7 @@ public class WalletUpdateListener implements WalletEventListener {
     }
 
     @Override
-    public void onKeysAdded(Wallet wallet, List<ECKey> ecKeys) {
+    public void onKeysAdded(List<ECKey> ecKeys) {
         Message message = new Message();
         Bundle data = new Bundle();
 
@@ -106,6 +106,7 @@ public class WalletUpdateListener implements WalletEventListener {
         message.setData(data);
         handler.sendMessageDelayed(message, DELAY_TIME);
     }
+
 
     @Override
     public void onScriptsAdded(Wallet wallet, List<Script> scripts) {

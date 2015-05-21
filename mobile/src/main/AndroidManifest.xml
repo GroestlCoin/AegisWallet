@@ -213,7 +213,7 @@
             <intent-filter android:label="Import Wallet">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="x-bitcoin/aegis-backup" />
+                <data android:mimeType="x-groestlcoin/aegis-backup" />
                 <data android:mimeType="application/octet-stream" />
             </intent-filter>
 

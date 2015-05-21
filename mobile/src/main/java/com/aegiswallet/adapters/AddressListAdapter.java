@@ -218,7 +218,7 @@ public class AddressListAdapter extends ArrayAdapter<Address> {
     }
 
     public void updateView() {
-        List<ECKey> keys = wallet.getKeys();
+        List<ECKey> keys = wallet.getImportedKeys();
 
         ArrayList<Address> addressArrayList = new ArrayList<Address>();
         for (ECKey key : keys) {

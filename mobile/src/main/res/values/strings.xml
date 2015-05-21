@@ -6,7 +6,7 @@
     <string name="welcome_to_string">Welcome to</string>
     <string name="aegis_string">Aegis</string>
     <string name="wallet_string">Wallet</string>
-    <string name="bitcoin_string">Bitcoin</string>
+    <string name="bitcoin_string">GroestlCoin</string>
     <string name="init_enter_password_string">Enter a strong password</string>
     <string name="or_string">Or</string>
     <string name="init_tap_nfc_string">Tap NFC tag to device</string>
@@ -19,8 +19,8 @@
 
     <string name="invalid_password_string">Invalid Password</string>
 
-    <string name="request_activity_label">Request Bitcoin</string>
-    <string name="send_activity_label">Send Bitcoin</string>
+    <string name="request_activity_label">Request GroestlCoin</string>
+    <string name="send_activity_label">Send GroestlCoin</string>
     <string name="transactions_activity_label">Transactions</string>
     <string name="currencies_activity_label">Currencies</string>
     <string name="addresses_activity_label">Your Addresses</string>
@@ -33,7 +33,7 @@
     <string name="drawer_close">Close navigation drawer</string>
 
     <string name="amount_to_request_text_string">Amount to Request</string>
-    <string name="request_subject">Aegis Wallet Bitcoin Request</string>
+    <string name="request_subject">Aegis Wallet GroestlCoin Request</string>
 
     <string name="amount_to_send_text_string">Amount to Send</string>
     <string name="to_address_text_string">To Address or Contact Mobile Number</string>
@@ -52,7 +52,7 @@
     <string name="decrypt_dialog_spinner_text">Decrypting Wallet...</string>
     <string name="encrypt_dialog_spinner_text">Encrypting Wallet...</string>
     <string name="adding_address_spinner_text">Adding New Address...</string>
-    <string name="send_btc_spinner_text">Sending your Bitcoins!</string>
+    <string name="send_btc_spinner_text">Sending your GroestlCoins!</string>
     <string name="backup_spinner_text">Backup in Progress</string>
 
     <string name="okay_button_string">OK</string>
@@ -156,10 +156,10 @@
     <string name="msg_default_mms_subject">Hi</string>
     <string name="msg_intent_failed">Sorry, the requested application could not be launched. The barcode contents may be invalid.</string>
 
-    <string name="plain_btc_string">BTC</string>
-    <string name="btc_string">&#160;BTC</string>
-    <string name="mbtc_string">&#160;mBTC</string>
-    <string name="send_btc_header">SEND BITCOIN</string>
+    <string name="plain_btc_string">GRS</string>
+    <string name="btc_string">&#160;GRS</string>
+    <string name="mbtc_string">&#160;mGRS</string>
+    <string name="send_btc_header">SEND GROESTLCOIN</string>
     <string name="your_balance_string">YOUR BALANCE:</string>
     <string name="avilable_balance_string">AVAILABLE BALANCE:</string>
     <string name="request_qrcode_instruction">HAVE PAYER SCAN THE QR CODE ABOVE</string>
@@ -195,8 +195,8 @@
     <string name="import_completed_start">Imported file - </string>
     <string name="import_completed_prompt_message">Press OK to synchronize with the network. This will restart the application in approximately 10 seconds.</string>
 
-    <string name="synchronizing_network">Syncing with Bitcoin network.</string>
-    <string name="sync_stalled">Sync with Bitcoin network stalled.</string>
+    <string name="synchronizing_network">Syncing with GroestlCoin network.</string>
+    <string name="sync_stalled">Sync with GroestlCoin network stalled.</string>
     <string name="sync_completed">Network sync complete, wallet is ready.</string>
     <string name="sync_days_behind">days behind...</string>
     <string name="received_string">Received</string>
@@ -211,7 +211,7 @@
     <string name="password_very_strong">Password Strength - Very Strong</string>
 
     <string name="invalid_address_string">Invalid Address or Mobile Number!</string>
-    <string name="invalid_amount_string">Insufficient Bitcoins!</string>
+    <string name="invalid_amount_string">Insufficient GroestlCoins!</string>
 
     <string name="settings_string">Settings</string>
     <string name="settings_about">About</string>
@@ -227,12 +227,12 @@
     <string name="settings_license_legal">License and Legal</string>
     <string name="settings_donate_address">1QBkmSSnxNPess4vey3d8h25CTnj95Be7n</string>
 
-    <string name="about_text">The mission of the Aegis Bitcoin Wallet is simple.
+    <string name="about_text">The mission of the Aegis GroestlCoin Wallet is simple.
         It is to make sure that in the event your Android device is lost or stolen, you can have peace of mind that
-        your Bitcoins are safe. \r\n\r\nFind out more at <a href="https://aegiswallet.com">https://aegiswallet.com</a>
+        your GroestlCoins are safe. \r\n\r\nFind out more at <a href="https://aegiswallet.com">https://aegiswallet.com</a>
         \r\n\r\nThis software was created by the efforts of the <a href="https://bitcoinsecurityproject.org">Bitcoin Security Project</a>.
     </string>
-    <string name="license_text">Aegis Bitcoin Wallet - The secure Bitcoin wallet for Android\r\nCopyright (C) 2014  Bojan Simic, Designed by Reuven Yamrom from <a href="http://www.orientmedia.net/">Orientmedia</a>\r\n
+    <string name="license_text">Aegis GroestlCoin Wallet - The secure GroestlCoin wallet for Android\r\nCopyright (C) 2014  Hash Engineering Solutions\r\nCopyright (C) 2014  Bojan Simic, Designed by Reuven Yamrom from <a href="http://www.orientmedia.net/">Orientmedia</a>\r\n
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -271,7 +271,7 @@
     <string name="copy_string">Copy</string>
     <string name="request_copied_to_clipboard_string">Request copied to clipboard!</string>
     <string name="request_str_part_1">There is a request for</string>
-    <string name="request_str_part_2">to be sent to the Bitcoin address</string>
+    <string name="request_str_part_2">to be sent to the GroestlCoin address</string>
 
     <string name="file_selector_nfc_notification">This file was encrypted using NFC. Press OK to continue.</string>
 
@@ -313,14 +313,14 @@
     <string name="change_currency_prompt_message">Would you like to change your wallet default currency to</string>
     <string name="change_currency_toast">Default currency changed to</string>
 
-    <string name="aegis_wallet_splash_top">Aegis Bitcoin Wallet</string>
+    <string name="aegis_wallet_splash_top">Aegis GroestlCoin Wallet</string>
     <string name="aegis_wallet_splash_bottom">Ultra Secure, Fast &amp; Reliable</string>
 
     <string name="connected_to_string">Connected to</string>
     <string name="peers_string">peers</string>
     <string name="choose_file_string">Please select a file</string>
 
-    <string name="wallet_backup_text">This email contains your Aegis Bitcoin Wallet backup.
+    <string name="wallet_backup_text">This email contains your Aegis GroestlCoin Wallet backup.
         Please keep this file safe and do not forget the password used to encrypt it. If you used an NFC tag, keep it safe.
         You can always import this wallet into an Aegis Wallet if you need to.</string>
 
@@ -384,12 +384,12 @@
     <string name="tag_formatted_string">Tag Formatted</string>
 
     <string name="sms_init_header">SMS Transaction</string>
-    <string name="sms_init_message">You are about to initiate an SMS transaction. You will be asked to confirm once the recipient replies with their Bitcoin address (via SMS).</string>
+    <string name="sms_init_message">You are about to initiate an SMS transaction. You will be asked to confirm once the recipient replies with their GroestlCoin address (via SMS).</string>
     <string name="sms_init_continue_button">Continue</string>
-    <string name="sms_send_message">You got Bitcoin! Reply to this message with your Bitcoin address to receive</string>
+    <string name="sms_send_message">You got GroestlCoin! Reply to this message with your GroestlCoin address to receive</string>
     <string name="sms_pendngtx">You already have a pending transaction for</string>
-    <string name="sms_sent_message">A text message has been sent to %1$s. Once they reply with a valid Bitcoin address, Aegis Wallet will prompt you to authorize the transaction.</string>
-    <string name="sms_received_message">%1$s (%2$s) has responded to your SMS transaction with the Bitcoin address below. Press press the Send button below to confirm.</string>
+    <string name="sms_sent_message">A text message has been sent to %1$s. Once they reply with a valid GroestlCoin address, Aegis Wallet will prompt you to authorize the transaction.</string>
+    <string name="sms_received_message">%1$s (%2$s) has responded to your SMS transaction with the GroestlCoin address below. Press press the Send button below to confirm.</string>
     <string name="sms_status_sent">Awaiting SMS Response</string>
     <string name="sms_status_rec">SMS Received. Needs Confirmation</string>
     <string name="sms_delete_button">CANCEL TRANSACTION</string>

@@ -38,7 +38,7 @@ import java.util.regex.Pattern;
 public class Constants {
 
     public static final Pattern PATTERN_BITCOIN_ADDRESS = Pattern.compile("[" + new String(Base58.ALPHABET) + "]{20,40}");
-    public static final Pattern PATTERN_PRIVATE_KEY = Pattern.compile("5[" + new String(Base58.ALPHABET) + "]{50,51}");
+    public static final Pattern PATTERN_PRIVATE_KEY = Pattern.compile("[56][" + new String(Base58.ALPHABET) + "]{50,51}");
     public static final Pattern PATTERN_TRANSACTION = Pattern.compile("[0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ$\\*\\+\\-\\.\\/\\:]{100,}");
 
     public static final String CURRENCY_PLUS_SIGN = "+ ";
@@ -84,8 +84,8 @@ public class Constants {
     public static final String CURRENCY_PREF_KEY = "currency";
     public static final String BLOCKCHAIN_CURRENCY_FILE_NAME = "tickerfile.txt";
     public static final String BLOCKCHAIN_CURRENCY_CALL = "https://blockchain.info/ticker";
-    public static final String BLOCKCHAIN_TX_URL = NETWORK_PARAMETERS.getId().equals(NetworkParameters.ID_MAINNET) ? "https://blockchain.info/tx/" : "http://blockexplorer.com/testnet/tx/";
-    public static final String BLOCKCHAIN_ADDRESS_URL = NETWORK_PARAMETERS.getId().equals(NetworkParameters.ID_MAINNET) ? "https://blockchain.info/address/" : "http://blockexplorer.com/testnet/address/";
+    public static final String BLOCKCHAIN_TX_URL = NETWORK_PARAMETERS.getId().equals(NetworkParameters.ID_MAINNET) ? "https://chainz.cryptoid.info/grs/tx.dws?" : "http://blockexplorer.com/testnet/tx/";
+    public static final String BLOCKCHAIN_ADDRESS_URL = NETWORK_PARAMETERS.getId().equals(NetworkParameters.ID_MAINNET) ? "https://chainz.cryptoid.info/grs/address.dws?" : "http://blockexplorer.com/testnet/address/";
 
     public static final int ACTION_ENCRYPT = 1;
     public static final int ACTION_DECRYPT = 2;

@@ -25,20 +25,29 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 
 import com.aegiswallet.utils.Constants;
+import com.google.bitcoin.core.CoinDefinition;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.Reader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
+
+import javax.annotation.Nonnull;
 
 /**
  * Created by bsimic on 3/17/14.
@@ -69,6 +78,7 @@ public class GetCurrencyInfoTask extends AsyncTask<String, Void, Void> {
         HttpURLConnection urlConnection = null;
         URL url = null;
         jsonObject = null;
+        Object grs_btc_price = null;
         InputStream inStream = null;
         try {
             url = new URL(urlString.toString());
@@ -84,6 +94,8 @@ public class GetCurrencyInfoTask extends AsyncTask<String, Void, Void> {
                 response += temp;
             }
             jsonObject = (JSONObject) new JSONTokener(response).nextValue();
+
+            grs_btc_price = getCoinValueBTC_poloniex();
         } catch (Exception e) {
         } finally {
             if (inStream != null) {
@@ -103,11 +115,27 @@ public class GetCurrencyInfoTask extends AsyncTask<String, Void, Void> {
 
             try {
                 FileOutputStream fos = context.getApplicationContext().openFileOutput(Constants.BLOCKCHAIN_CURRENCY_FILE_NAME, Context.MODE_PRIVATE);
+                /*double btcPrice = Double.parseDouble(jsonObject.toString());
+                double grsPrice = grs_btc_price != null ? (Double)grs_btc_price : 0;
+
+                JSONArray array = new JSONArray(jsonObject.toString());
+
+                for (int i = 0; i < array.length(); ++i)
+                {
+                    JSONObject currency = array.getJSONObject(i);
+                    double last = currency.getDouble("last") * grsPrice;
+                    currency.s
+                }
+
+*/
                 fos.write(jsonObject.toString().getBytes());
                 fos.close();
             } catch (IOException e) {
                 Log.e("Currency Task", "Cannot save or create file " + e.getMessage());
-            }
+            } /*catch (JSONException e)
+            {
+                Log.e("Currency Task", "JSON exception " + e.getMessage());
+            }*/
         }
         return null;
     }
@@ -133,5 +161,103 @@ public class GetCurrencyInfoTask extends AsyncTask<String, Void, Void> {
             return true;
         else
             return false;
+    }
+    private static Object getCoinValueBTC_poloniex()
+    {
+
+
+
+
+        //final Map<String, ExchangeRate> rates = new TreeMap<String, ExchangeRate>();
+        // Keep the LTC rate around for a bit
+        Double btcRate = 0.0;
+        String currencyCryptsy = CoinDefinition.cryptsyMarketCurrency;
+        String urlCryptsy =  "https://poloniex.com/public?command=returnTradeHistory&currencyPair="+CoinDefinition.cryptsyMarketCurrency +"_" + CoinDefinition.coinTicker;
+
+
+
+
+        try {
+            // final String currencyCode = currencies[i];
+            final URL URLCryptsy = new URL(urlCryptsy);
+            final HttpURLConnection connectionCryptsy = (HttpURLConnection)URLCryptsy.openConnection();
+            connectionCryptsy.setConnectTimeout(15*1000 * 2);
+            connectionCryptsy.setReadTimeout(15*1000* 2);
+            connectionCryptsy.connect();
+
+            final StringBuilder contentCryptsy = new StringBuilder();
+
+            Reader reader = null;
+            try
+            {
+                reader = new InputStreamReader(new BufferedInputStream(connectionCryptsy.getInputStream(), 1024));
+                copy(reader, contentCryptsy);
+                //final JSONObject head = new JSONObject(contentCryptsy.toString());
+                //JSONObject returnObject = head.getJSONObject("return");
+                //JSONObject markets = returnObject.getJSONObject("markets");
+                //JSONObject coinInfo = head.getJSONObject(CoinDefinition.cryptsyMarketCurrency +"_" + CoinDefinition.coinTicker);
+
+
+
+
+
+                JSONArray recenttrades = new JSONArray(contentCryptsy.toString());//coinInfo.getJSONArray("recenttrades");
+
+                double btcTraded = 0.0;
+                double coinTraded = 0.0;
+
+                for(int i = 0; i < recenttrades.length(); ++i)
+                {
+                    JSONObject trade = (JSONObject)recenttrades.get(i);
+
+                    btcTraded += trade.getDouble("total");
+                    coinTraded += trade.getDouble("amount");
+
+                }
+
+                Double averageTrade = btcTraded / coinTraded;
+
+
+
+                if(currencyCryptsy.equalsIgnoreCase("BTC")) btcRate = averageTrade;
+
+            }
+            finally
+            {
+                if (reader != null)
+                    reader.close();
+            }
+            return btcRate;
+        }
+        catch (final IOException x)
+        {
+            x.printStackTrace();
+        }
+        catch (final JSONException x)
+        {
+            x.printStackTrace();
+        }
+
+        return null;
+    }
+    public static final long copy(@Nonnull final Reader reader, @Nonnull final StringBuilder builder) throws IOException
+    {
+        return copy(reader, builder, 0);
+    }
+
+    public static final long copy(@Nonnull final Reader reader, @Nonnull final StringBuilder builder, final long maxChars) throws IOException
+    {
+        final char[] buffer = new char[256];
+        long count = 0;
+        int n = 0;
+        while (-1 != (n = reader.read(buffer)))
+        {
+            builder.append(buffer, 0, n);
+            count += n;
+
+            if (maxChars != 0 && count > maxChars)
+                throw new IOException("Read more than the limit of " + maxChars + " characters");
+        }
+        return count;
     }
 }

@@ -264,7 +264,7 @@ public class RequestBitcoinActivity extends Activity {
     private void handleCurrencyChange(int position) {
         String amountString = amountText.getText().toString();
         String currentAddress = prefs.getString(Constants.PREFS_KEY_SELECTED_ADDRESS, null);
-        String bitmapString = "bitcoin:" + currentAddress + "?amount=";
+        String bitmapString = "groestlcoin:" + currentAddress + "?amount=";
 
         if (amountString != null && amountString.length() == 0) {
             amountInCurrency.setText("");

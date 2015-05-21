@@ -1,0 +1,170 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 373376 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:328), pid=12740, tid=14324
+#
+# JRE version: 7.0_25-b17
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (23.25-b01 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000001372f000):  JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=14324, stack(0x0000000013af0000,0x0000000013bf0000)]
+
+Stack: [0x0000000013af0000,0x0000000013bf0000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+
+[error occurred during error reporting (printing native stack), id 0xc0000005]
+
+
+Current CompileTask:
+C2:   1914   95             com.android.dx.ssa.SsaMethod::forEachInsn (36 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000013750000 JavaThread "Service Thread" daemon [_thread_blocked, id=10040, stack(0x0000000014180000,0x0000000014280000)]
+  0x0000000013745000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=11556, stack(0x0000000013fb0000,0x00000000140b0000)]
+=>0x000000001372f000 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=14324, stack(0x0000000013af0000,0x0000000013bf0000)]
+  0x000000001372e000 JavaThread "Attach Listener" daemon [_thread_blocked, id=13520, stack(0x0000000013cc0000,0x0000000013dc0000)]
+  0x000000001372d000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=1912, stack(0x00000000134e0000,0x00000000135e0000)]
+  0x0000000011689000 JavaThread "Finalizer" daemon [_thread_blocked, id=2352, stack(0x00000000135e0000,0x00000000136e0000)]
+  0x000000001167f800 JavaThread "Reference Handler" daemon [_thread_blocked, id=10648, stack(0x00000000133a0000,0x00000000134a0000)]
+  0x00000000023ae800 JavaThread "main" [_thread_in_vm, id=12388, stack(0x0000000002700000,0x0000000002800000)]
+
+Other Threads:
+  0x0000000011678000 VMThread [stack: 0x0000000013210000,0x0000000013310000] [id=10708]
+  0x0000000013761000 WatcherThread [stack: 0x00000000142c0000,0x00000000143c0000] [id=11568]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 76352K, used 14408K [0x00000007aaab0000, 0x00000007affe0000, 0x0000000800000000)
+  eden space 65472K, 22% used [0x00000007aaab0000,0x00000007ab8c2380,0x00000007aeaa0000)
+  from space 10880K, 0% used [0x00000007af540000,0x00000007af540000,0x00000007affe0000)
+  to   space 10880K, 0% used [0x00000007aeaa0000,0x00000007aeaa0000,0x00000007af540000)
+ ParOldGen       total 174528K, used 0K [0x0000000700000000, 0x000000070aa70000, 0x00000007aaab0000)
+  object space 174528K, 0% used [0x0000000700000000,0x0000000700000000,0x000000070aa70000)
+ PSPermGen       total 21248K, used 5279K [0x00000006fae00000, 0x00000006fc2c0000, 0x0000000700000000)
+  object space 21248K, 24% used [0x00000006fae00000,0x00000006fb327c28,0x00000006fc2c0000)
+
+Card table byte_map: [0x0000000005800000,0x0000000006030000] byte_map_base: 0x0000000002029000
+
+Polling page: 0x0000000000130000
+
+Code Cache  [0x0000000002800000, 0x0000000002a70000, 0x0000000005800000)
+ total_blobs=335 nmethods=104 adapters=182 free_code_cache=48616Kb largest_free_block=49763392
+
+Compilation events (10 events):
+Event: 0.895 Thread 0x0000000013745000 nmethod 96 0x0000000002882b10 code [0x0000000002882c60, 0x0000000002882e98]
+Event: 0.895 Thread 0x0000000013745000   97             com.android.dx.util.Bits::set (38 bytes)
+Event: 0.895 Thread 0x0000000013745000 nmethod 97 0x00000000028827d0 code [0x0000000002882900, 0x00000000028829d8]
+Event: 0.898 Thread 0x0000000013745000   98             java.util.BitSet::recalculateWordsInUse (39 bytes)
+Event: 0.899 Thread 0x0000000013745000 nmethod 98 0x0000000002882550 code [0x0000000002882680, 0x0000000002882738]
+Event: 0.899 Thread 0x0000000013745000   99             com.android.dx.util.LabeledList::indexOfLabel (22 bytes)
+Event: 0.900 Thread 0x0000000013745000 nmethod 99 0x000000000288a8d0 code [0x000000000288aa00, 0x000000000288aab8]
+Event: 0.904 Thread 0x0000000013745000  100             com.android.dx.ssa.NormalSsaInsn::getSources (8 bytes)
+Event: 0.904 Thread 0x0000000013745000 nmethod 100 0x000000000288a690 code [0x000000000288a7c0, 0x000000000288a838]
+Event: 0.907 Thread 0x0000000013745000  101             com.android.dx.rop.code.RegisterSpec::hashCodeOf (30 bytes)
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (1 events):
+Event: 0.787 Thread 0x00000000023ae800 Uncommon trap -12 fr.pc 0x00000000028778dc
+
+Internal exceptions (2 events):
+Event: 0.029 Thread 0x00000000023ae800 Threw 0x00000007aaab61b0 at C:\jdk7u2_64p\jdk7u25\hotspot\src\share\vm\prims\jni.cpp:3994
+Event: 0.787 Thread 0x00000000023ae800 Implicit null exception at 0x000000000287753c to 0x00000000028778c9
+
+Events (10 events):
+Event: 0.803 loading class 0x0000000013790570
+Event: 0.803 loading class 0x0000000013790570 done
+Event: 0.803 loading class 0x00000000137baf70
+Event: 0.803 loading class 0x00000000137baf70 done
+Event: 0.828 loading class 0x000000001169e5a0
+Event: 0.828 loading class 0x000000001169e5a0 done
+Event: 0.846 loading class 0x000000001154f280
+Event: 0.846 loading class 0x000000001154f280 done
+Event: 0.871 loading class 0x0000000013880180
+Event: 0.871 loading class 0x0000000013880180 done
+
+
+Dynamic libraries:
+0x000000013fb40000 - 0x000000013fb73000 	C:\PROGRA~1\Java\JDK17~1.0_2\bin\java.exe
+0x0000000077c30000 - 0x0000000077dd8000 	C:\Windows\SYSTEM32\ntdll.dll
+0x0000000077b10000 - 0x0000000077c2f000 	C:\Windows\system32\kernel32.dll
+0x000007fefdd40000 - 0x000007fefddac000 	C:\Windows\system32\KERNELBASE.dll
+0x000007feff440000 - 0x000007feff51b000 	C:\Windows\system32\ADVAPI32.dll
+0x000007fefe090000 - 0x000007fefe12f000 	C:\Windows\system32\msvcrt.dll
+0x000007fefe1e0000 - 0x000007fefe1ff000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007feff120000 - 0x000007feff24d000 	C:\Windows\system32\RPCRT4.dll
+0x0000000077a10000 - 0x0000000077b0a000 	C:\Windows\system32\USER32.dll
+0x000007fefde10000 - 0x000007fefde77000 	C:\Windows\system32\GDI32.dll
+0x000007feff430000 - 0x000007feff43e000 	C:\Windows\system32\LPK.dll
+0x000007fefe200000 - 0x000007fefe2c9000 	C:\Windows\system32\USP10.dll
+0x000007fefc2e0000 - 0x000007fefc4d4000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.17514_none_fa396087175ac9ac\COMCTL32.dll
+0x000007feffc70000 - 0x000007feffce1000 	C:\Windows\system32\SHLWAPI.dll
+0x000007feff520000 - 0x000007feff54e000 	C:\Windows\system32\IMM32.DLL
+0x000007feffb60000 - 0x000007feffc69000 	C:\Windows\system32\MSCTF.dll
+0x00000000788b0000 - 0x0000000078981000 	C:\PROGRA~1\Java\JDK17~1.0_2\jre\bin\msvcr100.dll
+0x000000006e780000 - 0x000000006ee8f000 	C:\PROGRA~1\Java\JDK17~1.0_2\jre\bin\server\jvm.dll
+0x000007fef7b60000 - 0x000007fef7b69000 	C:\Windows\system32\WSOCK32.dll
+0x000007feffb10000 - 0x000007feffb5d000 	C:\Windows\system32\WS2_32.dll
+0x000007fefe130000 - 0x000007fefe138000 	C:\Windows\system32\NSI.dll
+0x000007fefa400000 - 0x000007fefa43b000 	C:\Windows\system32\WINMM.dll
+0x0000000077df0000 - 0x0000000077df7000 	C:\Windows\system32\PSAPI.DLL
+0x0000000073f80000 - 0x0000000073f8f000 	C:\PROGRA~1\Java\JDK17~1.0_2\jre\bin\verify.dll
+0x0000000063bb0000 - 0x0000000063bd8000 	C:\PROGRA~1\Java\JDK17~1.0_2\jre\bin\java.dll
+0x00000000666f0000 - 0x0000000066705000 	C:\PROGRA~1\Java\JDK17~1.0_2\jre\bin\zip.dll
+0x0000000063af0000 - 0x0000000063b09000 	C:\Program Files\Java\jdk1.7.0_25\jre\bin\net.dll
+0x000007fefd1d0000 - 0x000007fefd225000 	C:\Windows\system32\mswsock.dll
+0x000007fefd1c0000 - 0x000007fefd1c7000 	C:\Windows\System32\wship6.dll
+0x0000000063390000 - 0x00000000633a1000 	C:\Program Files\Java\jdk1.7.0_25\jre\bin\nio.dll
+
+VM Arguments:
+jvm_args: -Xmx4g -Xss1m -Djava.ext.dirs=D:\Development\adt-bundle-windows-x86_64-20130729\sdk\build-tools\19.1.0\lib 
+java_command: D:\Development\adt-bundle-windows-x86_64-20130729\sdk\build-tools\19.1.0\lib\dx.jar --dex --force-jumbo --output D:\Documents\GitHub\HashEngineering\Groestlcoin\AegisWallet\mobile\build\intermediates\pre-dexed\debug\vt-password-3.1.2-458f05013998e1c4c732384057a4de93cccb2def.jar D:\Documents\GitHub\HashEngineering\Groestlcoin\AegisWallet\mobile\libs\vt-password-3.1.2.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.7.0_25
+PATH=C:\ProgramData\Oracle\Java\javapath;C:\bin\Python34\;C:\bin\Python34\Scripts;C:\bin\mingw32\msys\1.0\bin;C:\bin\Perl64\site\bin;C:\bin\Perl64\bin\;C:\Program Files (x86)\AMD APP\bin\x86_64;C:\Program Files (x86)\AMD APP\bin\x86;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\DMIX;C:\Program Files (x86)\WinMerge;C:\Program Files\lame64;C:\Program Files (x86)\Common Files\HP\Digital Imaging\bin;C:\Program Files (x86)\HP\Digital Imaging\bin\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\bin\MinGW32\bin;C:\Program Files\Java\jre7\bin;C:\Program Files\Apache Software Foundation\apache-maven-3.0.5\bin;D:\Development\adt-bundle-windows-x86_64-20130729\sdk\tools;D:\Development\adt-bundle-windows-x86_64-20130729\sdk\platform-tools;C:\Program Files\gradle-2.2.1\bin;D:\Development\adt-bundle-windows-x86_64-20130729\sdk\build-tools;C:\Program Files\SourceGear\Common\DiffMerge\;D:\deps\Qt\5.2.0\bin;C:\Program Files (x86)\Windows Live\Shared;D:\bin;C:\Program Files (x86)\Skype\Phone\
+USERNAME=Eric
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 42 Stepping 7, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 Service Pack 1
+
+CPU:total 8 (4 cores per cpu, 2 threads per core) family 6 model 42 stepping 7, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, ht, tsc, tscinvbit
+
+Memory: 4k page, physical 16750160k(1566036k free), swap 19481920k(23624k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (23.25-b01) for windows-amd64 JRE (1.7.0_25-b17), built on Jun 21 2013 12:58:32 by "java_re" with unknown MS VC++:1600
+
+time: Wed May 06 23:09:59 2015
+elapsed time: 1 seconds
+

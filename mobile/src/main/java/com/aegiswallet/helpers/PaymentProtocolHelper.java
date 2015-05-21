@@ -51,7 +51,7 @@ public class PaymentProtocolHelper {
     }
 
     public void parse() {
-        if (input.startsWith("bitcoin:")) {
+        if (input.startsWith("groestlcoin:")) {
             try {
                 bitcoinUri = new BitcoinURI(null, input);
                 address = bitcoinUri.getAddress();
@@ -59,7 +59,7 @@ public class PaymentProtocolHelper {
                 amount = bitcoinUri.getAmount();
 
             } catch (final BitcoinURIParseException x) {
-                Log.e(TAG, "Error parsing bitcoin URI. " + input);
+                Log.e(TAG, "Error parsing groestlcoin URI. " + input);
             }
         } else if (Constants.PATTERN_BITCOIN_ADDRESS.matcher(input).matches()) {
             try {

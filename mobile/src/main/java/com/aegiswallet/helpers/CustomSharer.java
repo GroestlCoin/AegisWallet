@@ -71,7 +71,7 @@ public class CustomSharer {
         emailIntent.putExtra(Intent.EXTRA_SUBJECT,
                 "Aegis Wallet Backup");
         emailIntent.putExtra(Intent.EXTRA_TEXT, context.getString(R.string.wallet_backup_text));
-        emailIntent.setType("x-bitcoin/aegis-backup");
+        emailIntent.setType("x-groestlcoin/aegis-backup");
 
         if(fileName != null && emailIntent != null)
             emailIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(fileName)));

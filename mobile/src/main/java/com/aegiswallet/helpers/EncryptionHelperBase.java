@@ -198,7 +198,7 @@ public class EncryptionHelperBase {
                         + date);
 
                 List<ECKey> keys = new LinkedList<ECKey>();
-                for (ECKey key : wallet.getKeys())
+                for (ECKey key : wallet.getImportedKeys())
                     if (!wallet.isKeyRotating(key))
                         keys.add(key);
 
