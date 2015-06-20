@@ -97,7 +97,7 @@ public class ShowAddressesActivity extends Activity implements PasswordProvidedL
         });
 
         ArrayList<Address> addressArrayList = new ArrayList<Address>();
-        List<ECKey> keys = wallet.getImportedKeys();
+        List<ECKey> keys = wallet.getKeys();
 
         for (ECKey key : keys) {
             Address a = key.toAddress(Constants.NETWORK_PARAMETERS);

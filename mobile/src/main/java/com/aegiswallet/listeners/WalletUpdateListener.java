@@ -97,7 +97,7 @@ public class WalletUpdateListener implements WalletEventListener {
     }
 
     @Override
-    public void onKeysAdded(List<ECKey> ecKeys) {
+    public void onKeysAdded(Wallet wallet, List<ECKey> ecKeys) {
         Message message = new Message();
         Bundle data = new Bundle();
 

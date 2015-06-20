@@ -824,7 +824,7 @@ public class MainActivity extends Activity implements PasswordProvidedListener,
         final String selectedAddress = prefs.getString(Constants.PREFS_KEY_SELECTED_ADDRESS, null);
 
         Address firstAddress = null;
-        for (final ECKey key : wallet.getImportedKeys()) {
+        for (final ECKey key : wallet.getKeys()) {
             if (!wallet.isKeyRotating(key)) {
                 final Address address = key.toAddress(Constants.NETWORK_PARAMETERS);
 

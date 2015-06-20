@@ -6,3 +6,4 @@
 /mobile/*.apk
 .idea/
 /.idea/libraries
+*.log

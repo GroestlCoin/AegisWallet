@@ -616,7 +616,7 @@ public class WalletUtils {
     }
 
     public static boolean isAddressMine(Wallet w, Address a){
-        List<ECKey> keys = w.getImportedKeys();
+        List<ECKey> keys = w.getKeys();
 
         for (ECKey key : keys) {
             Address address = key.toAddress(Constants.NETWORK_PARAMETERS);

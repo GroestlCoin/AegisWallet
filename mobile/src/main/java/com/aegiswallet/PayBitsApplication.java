@@ -263,7 +263,7 @@ public class PayBitsApplication extends Application {
     }
 
     private void setKeyDefaults() {
-        for (final ECKey key : wallet.getImportedKeys())
+        for (final ECKey key : wallet.getKeys())
             if (!wallet.isKeyRotating(key)) {
                 return; // found
             }

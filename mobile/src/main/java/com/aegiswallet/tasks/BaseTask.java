@@ -222,7 +222,7 @@ public class BaseTask extends AsyncTask {
                         + date);
 
                 List<ECKey> keys = new LinkedList<ECKey>();
-                for (ECKey key : wallet.getImportedKeys())
+                for (ECKey key : wallet.getKeys())
                     if (!wallet.isKeyRotating(key))
                         keys.add(key);
 
