@@ -46,6 +46,7 @@ import com.google.bitcoin.core.Address;
 import com.google.bitcoin.core.AddressFormatException;
 import com.google.bitcoin.core.ECKey;
 import com.google.bitcoin.core.Wallet;
+import com.google.bitcoin.uri.BitcoinURI;
 import com.google.zxing.client.android.CaptureActivity;
 
 import java.util.ArrayList;
@@ -211,6 +212,8 @@ public class AddWatchAddressActivity extends Activity {
             String contents = data.getStringExtra("SCAN_RESULT");
             if (contents != null) {
                 try {
+                    if(contents.contains(BitcoinURI.BITCOIN_SCHEME))
+                        contents = contents.substring(BitcoinURI.BITCOIN_SCHEME.length()+1);
                     Address address = new Address(Constants.NETWORK_PARAMETERS, contents);
                     addressTextBox.setText(contents);
                 } catch (AddressFormatException e) {
