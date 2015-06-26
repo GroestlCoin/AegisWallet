@@ -25,7 +25,7 @@
         android:layout_height="1px"
         android:background="@color/lighter_grey" />
 
-    <com.aegiswallet.widgets.AegisButton
+    <!--com.aegiswallet.widgets.AegisButton
         android:id="@+id/settings_faq_button"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
@@ -38,7 +38,7 @@
         android:background="@color/transparent"
         android:drawableRight="@drawable/right_arrow"
         android:onClick="toggleLegal"
-        />
+        /-->
 
     <TextView
         android:layout_width="fill_parent"
@@ -79,7 +79,7 @@
         android:layout_height="1px"
         android:background="@color/lighter_grey" />
 
-    <com.aegiswallet.widgets.AegisButton
+    <!--com.aegiswallet.widgets.AegisButton
         android:id="@+id/settings_donate_button"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
@@ -93,7 +93,7 @@
         android:drawableRight="@drawable/right_arrow"
         android:onClick="initDonation"
 
-        />
+        /-->
 
     <TextView
         android:layout_width="fill_parent"

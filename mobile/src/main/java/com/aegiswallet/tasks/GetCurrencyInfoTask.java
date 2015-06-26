@@ -96,6 +96,15 @@ public class GetCurrencyInfoTask extends AsyncTask<String, Void, Void> {
             jsonObject = (JSONObject) new JSONTokener(response).nextValue();
 
             grs_btc_price = getCoinValueBTC_poloniex();
+
+            JSONArray array = jsonObject.names();
+            for(int i = 0; i < array.length(); ++i) {
+                String currency = array.getString(i);
+                JSONObject thisOne = jsonObject.getJSONObject(currency);
+                double last = thisOne.getDouble("last");
+                last *= (Double)grs_btc_price;
+                thisOne.put("last", last);
+            }
         } catch (Exception e) {
         } finally {
             if (inStream != null) {

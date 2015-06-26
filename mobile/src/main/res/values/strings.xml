@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Aegis Wallet</string>
+    <string name="app_name">Aegis Groestlcoin Wallet</string>
 
     <string name="welcome_to_string">Welcome to</string>
-    <string name="aegis_string">Aegis</string>
+    <string name="aegis_string">Aegis Groestlcoin</string>
     <string name="wallet_string">Wallet</string>
     <string name="bitcoin_string">GroestlCoin</string>
     <string name="init_enter_password_string">Enter a strong password</string>
@@ -229,8 +229,8 @@
 
     <string name="about_text">The mission of the Aegis GroestlCoin Wallet is simple.
         It is to make sure that in the event your Android device is lost or stolen, you can have peace of mind that
-        your GroestlCoins are safe. \r\n\r\nFind out more at <a href="https://aegiswallet.com">https://aegiswallet.com</a>
-        \r\n\r\nThis software was created by the efforts of the <a href="https://bitcoinsecurityproject.org">Bitcoin Security Project</a>.
+        your GroestlCoins are safe. \r\n\r\n
+        \r\n\r\nThis software was created by the efforts of <a href="http://hashengineeringsolutions.com">Hash Engineering Solutions</a>.
     </string>
     <string name="license_text">Aegis GroestlCoin Wallet - The secure GroestlCoin wallet for Android\r\nCopyright (C) 2014  Hash Engineering Solutions\r\nCopyright (C) 2014  Bojan Simic, Designed by Reuven Yamrom from <a href="http://www.orientmedia.net/">Orientmedia</a>\r\n
     This program is free software: you can redistribute it and/or modify
@@ -322,7 +322,7 @@
 
     <string name="wallet_backup_text">This email contains your Aegis GroestlCoin Wallet backup.
         Please keep this file safe and do not forget the password used to encrypt it. If you used an NFC tag, keep it safe.
-        You can always import this wallet into an Aegis Wallet if you need to.</string>
+        You can always import this wallet into an Aegis Groestlcoin Wallet if you need to.</string>
 
     <string name="private_key_textbox">Private Key</string>
     <string name="confirm_add_key_button_text">Add To Wallet</string>
@@ -373,7 +373,7 @@
     </string-array>
 
     <string name="tag_pref_filename">com.aegiswallet.tags</string>
-    <string name="sms_transaction_filename">com.aegiswallet.smstxns</string>
+    <string name="sms_transaction_filename">hashengineering.groestlcoin.aegiswallet.smstxns</string>
 
     <string name="tag_written_string">Tag Written</string>
     <string name="tag_cant_connect_nfc_adapter_string">Cannot connect NFC Adapter</string>
@@ -388,7 +388,7 @@
     <string name="sms_init_continue_button">Continue</string>
     <string name="sms_send_message">You got GroestlCoin! Reply to this message with your GroestlCoin address to receive</string>
     <string name="sms_pendngtx">You already have a pending transaction for</string>
-    <string name="sms_sent_message">A text message has been sent to %1$s. Once they reply with a valid GroestlCoin address, Aegis Wallet will prompt you to authorize the transaction.</string>
+    <string name="sms_sent_message">A text message has been sent to %1$s. Once they reply with a valid GroestlCoin address, Aegis Groestlcoin Wallet will prompt you to authorize the transaction.</string>
     <string name="sms_received_message">%1$s (%2$s) has responded to your SMS transaction with the GroestlCoin address below. Press press the Send button below to confirm.</string>
     <string name="sms_status_sent">Awaiting SMS Response</string>
     <string name="sms_status_rec">SMS Received. Needs Confirmation</string>

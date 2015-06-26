@@ -85,9 +85,9 @@ public class AboutActivity extends Activity {
     }
 
     private void initButtons() {
-        donateButton = (Button) findViewById(R.id.settings_donate_button);
+        //donateButton = (Button) findViewById(R.id.settings_donate_button);
         licenseButton = (Button) findViewById(R.id.settings_license_button);
-        faqButton = (Button) findViewById(R.id.settings_faq_button);
+        //faqButton = (Button) findViewById(R.id.settings_faq_button);
 
         aboutView = (TextView) findViewById(R.id.about_textview);
         licenseView = (TextView) findViewById(R.id.legal_textview);
@@ -98,14 +98,14 @@ public class AboutActivity extends Activity {
         licenseView.setMovementMethod(new ScrollingMovementMethod());
         licenseView.setMovementMethod(LinkMovementMethod.getInstance());
 
-        faqButton.setOnClickListener(new View.OnClickListener() {
+        /*faqButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Uri uriUrl = Uri.parse(getString(R.string.faq_link));
                 Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
                 startActivity(launchBrowser);
             }
-        });
+        });*/
     }
 
     public void initDonation(View view) {

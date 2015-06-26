@@ -6,7 +6,7 @@ android {
     buildToolsVersion "20.0.0"
 
     defaultConfig {
-        applicationId "com.aegiswallet"
+        applicationId "hashengineering.groestlcoin.aegiswallet"
         minSdkVersion 21
         targetSdkVersion 21
         versionCode 1
