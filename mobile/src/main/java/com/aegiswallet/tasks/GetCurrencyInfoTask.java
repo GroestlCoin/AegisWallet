@@ -228,7 +228,7 @@ public class GetCurrencyInfoTask extends AsyncTask<String, Void, Void> {
 
 
 
-                if(currencyCryptsy.equalsIgnoreCase("BTC")) btcRate = averageTrade;
+                /*if(currencyCryptsy.equalsIgnoreCase("BTC"))*/ btcRate = averageTrade;
 
             }
             finally

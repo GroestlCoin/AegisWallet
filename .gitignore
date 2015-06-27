@@ -7,3 +7,6 @@
 .idea/
 /.idea/libraries
 *.log
+/mobile/*.bar
+/mobile/*.wrn
+/mobile/manifest-merger-release-report.txt

@@ -81,7 +81,7 @@ public class CurrencyAdapter extends ArrayAdapter<CurrencyPojo> {
             else
                 denominationView.setText(p.getCurrency());
 
-            conversionView.setText(" 1 BTC = " + p.getSymbol() + p.getLast().toString());
+            conversionView.setText(" 1 GRS = " + p.getSymbol() + p.getLast().toString());
         }
 
         ChangeCurrencyListener changeCurrencyListener = new ChangeCurrencyListener(position);
