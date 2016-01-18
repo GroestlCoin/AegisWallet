@@ -33,7 +33,7 @@
     <string name="drawer_close">Close navigation drawer</string>
 
     <string name="amount_to_request_text_string">Amount to Request</string>
-    <string name="request_subject">Aegis Wallet GroestlCoin Request</string>
+    <string name="request_subject">Aegis GroestlCoin Wallet Request</string>
 
     <string name="amount_to_send_text_string">Amount to Send</string>
     <string name="to_address_text_string">To Address or Contact Mobile Number</string>
