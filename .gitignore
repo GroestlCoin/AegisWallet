@@ -10,3 +10,4 @@
 /mobile/*.bar
 /mobile/*.wrn
 /mobile/manifest-merger-release-report.txt
+*.iml
