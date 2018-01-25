@@ -95,7 +95,7 @@ public class GetCurrencyInfoTask extends AsyncTask<String, Void, Void> {
             }
             jsonObject = (JSONObject) new JSONTokener(response).nextValue();
 
-            grs_btc_price = getCoinValueBTC_poloniex();
+            grs_btc_price = getCoinValueBTC_bittrex();
 
             JSONArray array = jsonObject.names();
             for(int i = 0; i < array.length(); ++i) {
@@ -249,6 +249,64 @@ public class GetCurrencyInfoTask extends AsyncTask<String, Void, Void> {
 
         return null;
     }
+
+    private final static String BITTREX_URL = "https://bittrex.com/api/v1.1/public/getticker?market=btc-grs";
+    private static Object getCoinValueBTC_bittrex()
+    {
+        Double btcRate = 0.0;
+
+        try {
+            // final String currencyCode = currencies[i];
+            final URL URLCryptsy = new URL(BITTREX_URL);
+            final HttpURLConnection connection = (HttpURLConnection)URLCryptsy.openConnection();
+            connection.setConnectTimeout(15*1000 * 2);
+            connection.setReadTimeout(15*1000* 2);
+            connection.connect();
+
+            final StringBuilder content = new StringBuilder();
+
+            Reader reader = null;
+            try
+            {
+                reader = new InputStreamReader(new BufferedInputStream(connection.getInputStream(), 1024));
+                copy(reader, content);
+
+                final JSONObject head = new JSONObject(content.toString());
+
+                String result = head.getString("success");
+
+                Double averageTrade = null;
+                if(result.equals("true"))
+                {
+                    JSONObject dataObject = head.getJSONObject("result");
+
+                    averageTrade = dataObject.getDouble("Last");
+                }
+
+
+
+                btcRate = averageTrade;
+
+            }
+            finally
+            {
+                if (reader != null)
+                    reader.close();
+            }
+            return btcRate;
+        }
+        catch (final IOException x)
+        {
+            x.printStackTrace();
+        }
+        catch (final JSONException x)
+        {
+            x.printStackTrace();
+        }
+
+        return null;
+    }
+
     public static final long copy(@Nonnull final Reader reader, @Nonnull final StringBuilder builder) throws IOException
     {
         return copy(reader, builder, 0);
