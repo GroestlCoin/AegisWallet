@@ -56,5 +56,5 @@ dependencies {
     compile 'com.android.support:support-v4:21.0.0'
     compile 'com.google.android.gms:play-services-wearable:+'
     compile 'org.joda:joda-money:0.10.0'
-    wearApp project(':wear')
+    //wearApp project(':wear')
 }
